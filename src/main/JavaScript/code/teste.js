@@ -1,15 +1,20 @@
-//CLASSE PURAMENTE DE TESTE
-//TUDO FEITO POR IA
-//NADA DISSO SERA UTILIZADO NO PROJETO REAL
-
-
-
-
-
-import Usuario from './Usuario.js';
 import Aluno from './Aluno.js';
 import Notas from './Notas.js';
 import Observacoes from './Observacoes.js';
+
+import { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno } from './Conecction.js';
+// TESTES
+
+
+//const alunos = await exibirAlunoPorIndex("0")
+//for (let i = 0; i < alunos.length; i++) {
+//    console.log(alunos[i].getEmail());
+//}
+
+//console.log(await deletarAluno("698bbab2d4cbd13a00431f6c"));
+
+
+//OS DADOS SÂO GERADOS POR IA E SÃO APENAS PARA TESTE, NÂO SÂO REAIS E NÂO DEVEM SER USADOS NO PROJETO REAL
 
 // Criando algumas notas para o aluno
 const nota1 = new Notas(1, 101, 8.5, "2024-1");
@@ -21,46 +26,25 @@ const obs2 = new Observacoes(2, "2024-04-20", "Precisa melhorar na entrega de tr
 
 // Instanciando o objeto Aluno
 const alunoTeste = new Aluno(
-    "João Silva",                // nome
-    "joao.silva",                // nomeUsuario
-    "senha123",                  // senha
-    "aluno",                     // tipo
-    "joao@escola.com",           // email
-    "20240001",                  // matricula
-    "9º ano",                    // serie
-    "ativo",                     // status
-    [nota1, nota2],              // notas
-    [obs1, obs2]                 // observacoes
+    "Lucas Lima",                // nome (1)
+    "Lucas.Lima",                // nomeUsuario (2)
+    "senha123",                  // senha (3)
+    "aluno",                     // tipo (4)
+    "Lucas@escola.com",           // email (5)
+    null,                        // id (6) - null para novo aluno
+    "20240001",                  // matricula (7)
+    "9º ano",                    // serie (8)
+    "ativo",                     // status (9)
+    [nota1, nota2],              // notas (10)
+    [obs1, obs2]                 // observacoes (11)
 );
 
-const jsonAluno = alunoTeste.paraJson();
 
-
-
-
-async function enviarDados() {
-    try {
-        const resposta = await fetch('http://localhost:8080/TrabalhoDSV2/app/aluno/criar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(jsonAluno)
-        });
-
-        // Verificar se a resposta foi ok
-        if (!resposta.ok) {
-            throw new Error(`Erro HTTP: ${resposta.status}`);
-        }
-
-        // Converter resposta para JSON
-        const dadosResposta = await resposta.json();
-        console.log('Sucesso:', dadosResposta);
-        
-        return dadosResposta;
-    } catch (erro) {
-        console.error('Erro ao enviar:', erro);
-    }
-}
-
-enviarDados();
+//console.log(await atualizarAluno("698bbb7fd4cbd13a00431f6e", alunoTeste));
+console.log("ANTES:")
+let listaAlunos = await exibirAlunoPorNome("Lima");
+console.log(listaAlunos);
+await atualizarAluno("698bbb7fd4cbd13a00431f6e", alunoTeste);
+console.log("DEPOIS:")
+listaAlunos = await exibirAlunoPorNome("Lima");
+console.log(listaAlunos);   

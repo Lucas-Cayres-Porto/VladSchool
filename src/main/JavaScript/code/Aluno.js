@@ -3,14 +3,16 @@ import Usuario from "./Usuario.js";
 import Notas from "./Notas.js";        
 import Observacoes from "./Observacoes.js"; 
 class Aluno extends Usuario {
-    constructor(nome, nomeUsuario, senha, tipo, email, matricula, serie, status, notas = null, observacoes = null) {
-        super(nome, nomeUsuario, senha, tipo, email);
+    constructor(nome, nomeUsuario, senha, tipo, email, id, matricula, serie, status, notas = null, observacoes = null) {
+        super(nome, nomeUsuario, senha, tipo, email, id);
         this.matricula = matricula;
         this.serie = serie;
         this.status = status;
         this.notas = notas || [];
         this.observacoes = observacoes || [];
     }
+
+
 
 
     getMatricula() {return this.matricula;}
@@ -23,10 +25,13 @@ class Aluno extends Usuario {
 
     getObservacoes() {return this.observacoes;}
 
+    getId() {return this.id;}
+
 
     paraJson(){
         try{
         const alunoJson = {
+                id: super.getId(),
                 nome: super.getNome(),
                 nome_usuario: super.getNomeUsuario(),
                 senha: super.getSenha(),
@@ -71,12 +76,11 @@ class Aluno extends Usuario {
             console.error("Erro ao converter para JSON:", e);
             return null;
         }
-        return null;
     }
 
-    deJson(jsonDoc){
+    static deJson(jsonDoc=JSON){
         try{
-            
+            const id = jsonDoc._id ? (jsonDoc._id.$oid || jsonDoc._id) : null;
             const nome = jsonDoc.nome;
             const nomeUsuario = jsonDoc.nome_usuario;
             const senha = jsonDoc.senha;
@@ -117,10 +121,11 @@ class Aluno extends Usuario {
             }
 
 
-            return new Aluno(
-                nome, nomeUsuario, senha, tipo, email,
+            const aluno = new Aluno(
+                nome, nomeUsuario, senha, tipo, email, id ,
                 matricula, serie, status, notasList, obsList
             );
+            return aluno;
 
 
 
@@ -133,6 +138,7 @@ class Aluno extends Usuario {
 
     toString() {
         return JSON.stringify({
+            id: super.getId(),
             nome: super.getNome(),
             nomeUsuario: super.getNomeUsuario(),
             email: super.getEmail(),
