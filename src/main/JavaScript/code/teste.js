@@ -45,6 +45,6 @@ console.log("ANTES:")
 let listaAlunos = await exibirAlunoPorNome("Lima");
 console.log(listaAlunos);
 await atualizarAluno("698bbb7fd4cbd13a00431f6e", alunoTeste);
-console.log("DEPOIS:")
+console.log("DEPOIS:")  
 listaAlunos = await exibirAlunoPorNome("Lima");
 console.log(listaAlunos);   
