@@ -1,13 +1,13 @@
 import Aluno from './Aluno.js';
 
-    
+const url = 'http://localhost:8080/TrabalhoDSV2/';
 
 async function criarAluno(aluno=Aluno) {
     try {
         aluno = aluno.paraJson();
 
         //metodo que que envia e conecta no backend para criar um aluno
-        const resposta = await fetch('http://localhost:8080/TrabalhoDSV2/app/aluno/criar', {
+        const resposta = await fetch(`${url}app/aluno/criar`, {
             method: 'POST',
             headers: {
                 //seta o tipo de conteudo para json, para o backend entender que é um json
@@ -44,7 +44,7 @@ async function exibirAlunoPorNome(nome=String) {
         //constante do tipo de busca
         const tipo = "nome";
         //cria a url com os parametros, e usa fetch para fazer a requisição get
-        const resposta = await fetch(`http://localhost:8080/TrabalhoDSV2/app/aluno/exibir?tipo=${tipo}&nome=${(nome)}`, {
+        const resposta = await fetch(`${url}app/aluno/exibir?tipo=${tipo}&nome=${(nome)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ async function exibirAlunoPorSerie(serie=String) {
         //constante do tipo de busca
         const tipo = "serie";
         //cria a url com os parametros, e usa fetch para fazer a requisição get
-        const resposta = await fetch(`http://localhost:8080/TrabalhoDSV2/app/aluno/exibir?tipo=${tipo}&serie=${(serie)}`, {
+        const resposta = await fetch(`${url}app/aluno/exibir?tipo=${tipo}&serie=${(serie)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ async function exibirAlunoPorStatus(status=String) {
         //constante do tipo de busca
         const tipo = "status";
         //cria a url com os parametros, e usa fetch para fazer a requisição get
-        const resposta = await fetch(`http://localhost:8080/TrabalhoDSV2/app/aluno/exibir?tipo=${tipo}&status=${(status)}`, {
+        const resposta = await fetch(`${url}app/aluno/exibir?tipo=${tipo}&status=${(status)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -195,7 +195,7 @@ async function exibirAlunoPorIndex(index=String) {
         //constante do tipo de busca
         const tipo = "index";
         //cria a url com os parametros, e usa fetch para fazer a requisição get
-        const resposta = await fetch(`http://localhost:8080/TrabalhoDSV2/app/aluno/exibir?tipo=${tipo}&indice=${(index)}`, {
+        const resposta = await fetch(`${url}app/aluno/exibir?tipo=${tipo}&indice=${(index)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -244,7 +244,7 @@ async function deletarAluno(id=String) {
         //constante do tipo de busca
 
         //cria a url com os parametros, e usa fetch para fazer a requisição post
-        const resposta = await fetch(`http://localhost:8080/TrabalhoDSV2/app/aluno/deletar?_id=${id}`, {
+        const resposta = await fetch(`${url}app/aluno/deletar?_id=${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -274,7 +274,7 @@ async function atualizarAluno(id=String, aluno=Aluno) {
         aluno = aluno.paraJson();
 
         //metodo que que envia e conecta no backend para atualizar um aluno
-        const resposta = await fetch(`http://localhost:8080/TrabalhoDSV2/app/aluno/atualizar?_id=${id}`, {
+        const resposta = await fetch(`${url}app/aluno/atualizar?_id=${id}`, {
             method: 'POST',
             headers: {
                 //seta o tipo de conteudo para json, para o backend entender que é um json
