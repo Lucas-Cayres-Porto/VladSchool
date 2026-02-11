@@ -3,9 +3,7 @@ package controller.disciplina;
 import jakarta.servlet.http.HttpServlet;
 import dao.DisciplinaDAO;
 import util.JsonLoader;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.bson.Document;
@@ -17,7 +15,7 @@ import java.util.List;
 
 @WebServlet("/app/disciplina/exibir")
 public class ExibirDisciplina extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
         //lista de alunos, todos os metodos de busca retornam isso

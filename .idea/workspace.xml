@@ -10,10 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/CriarAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/CriarAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DisciplinaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DisciplinaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Disciplinas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Disciplinas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +184,7 @@
       <workItem from="1770738056219" duration="1057000" />
       <workItem from="1770739523865" duration="621000" />
       <workItem from="1770757362549" duration="2474000" />
-      <workItem from="1770807537342" duration="631000" />
+      <workItem from="1770807537342" duration="6248000" />
     </task>
     <servers />
   </component>
