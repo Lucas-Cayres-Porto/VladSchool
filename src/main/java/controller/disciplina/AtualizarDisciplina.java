@@ -1,23 +1,22 @@
-package controller.aluno;
+package controller.disciplina;
 
-import dao.AlunosDAO;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
+import dao.DisciplinaDAO;
+import model.Disciplinas;
+import util.ExceptionHandler;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Aluno;
 import org.bson.Document;
-import util.ExceptionHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@WebServlet("/app/disciplina/atualizar")
+public class AtualizarDisciplina extends HttpServlet {
 
-@WebServlet("/app/aluno/criar")
-
-public class CriarAluno extends HttpServlet {
-    AlunosDAO alunosDAO = new AlunosDAO();
+    DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
@@ -33,7 +32,7 @@ public class CriarAluno extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
-        //json que vai ser utilizado para criar o usuario no banco
+        //json que vai ser utilizado para atualizar o usuario no banco
         StringBuilder jsonBuilder = new StringBuilder(); // json em si (O string builder é a versão melhorada da String, pq é mutavel ent n cria objetos desncessarios na memoria acada mudança)
         String line; // linha do json (variavel temporaria)
 
@@ -56,23 +55,23 @@ public class CriarAluno extends HttpServlet {
             String jsonString = jsonBuilder.toString();
 
 
-            //objeto que o metodo criar utiliza
+            //objeto que o metodo atualizar utiliza
+            //convert json string para json bson, e depois para um objeto disciplina
+            Disciplinas disciplinas = Disciplinas.deJson(Document.parse(jsonString));
 
+            //pega o id para indentificar oq atualizar
+            int id = Integer.parseInt(req.getParameter("id"));
 
-            //convert json string para json bson, e depois para um objeto aluno
-            Aluno aluno = Aluno.deJson(Document.parse(jsonString));
-
-
-            //cria o aluno
-            alunosDAO.criarAluno(aluno);
+            //atualiza o aluno
+            disciplinaDAO.atualizarDisciplina(id, disciplinas.paraJson());
 
 
             //cria e manda mensagem de sucesso
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno Criado\",");
-            message.append("\"causa\": \"").append(aluno.getNome()).append("\"");
+            message.append("\"message\": \"Aluno atualizado\",");
+            message.append("\"causa\": \"").append(disciplinas.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
 
@@ -83,7 +82,7 @@ public class CriarAluno extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao criar aluno\",");
+            errorBuilder.append("\"message\": \"Erro ao atualizar aluno\",");
             errorBuilder.append("\"causa\": \"").append(e.getMessage()).append("\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());

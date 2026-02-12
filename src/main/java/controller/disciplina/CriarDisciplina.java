@@ -1,23 +1,25 @@
-package controller.aluno;
+package controller.disciplina;
 
-import dao.AlunosDAO;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
+import dao.DisciplinaDAO;
+
+import model.Disciplinas;
+import util.ExceptionHandler;
+
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Aluno;
 import org.bson.Document;
-import util.ExceptionHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet("/app/aluno/criar")
+@WebServlet("/app/disciplina/criar")
+public class CriarDisciplina extends HttpServlet {
 
-public class CriarAluno extends HttpServlet {
-    AlunosDAO alunosDAO = new AlunosDAO();
+    DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
@@ -60,11 +62,11 @@ public class CriarAluno extends HttpServlet {
 
 
             //convert json string para json bson, e depois para um objeto aluno
-            Aluno aluno = Aluno.deJson(Document.parse(jsonString));
+            Disciplinas disciplina = Disciplinas.deJson(Document.parse(jsonString));
 
 
             //cria o aluno
-            alunosDAO.criarAluno(aluno);
+            disciplinaDAO.criarDisciplina(disciplina);
 
 
             //cria e manda mensagem de sucesso
@@ -72,7 +74,7 @@ public class CriarAluno extends HttpServlet {
             message.append("{");
             message.append("\"success\": true,");
             message.append("\"message\": \"Aluno Criado\",");
-            message.append("\"causa\": \"").append(aluno.getNome()).append("\"");
+            message.append("\"causa\": \"").append(disciplina.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
 
