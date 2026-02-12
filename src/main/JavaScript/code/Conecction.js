@@ -306,6 +306,46 @@ async function atualizarAluno(id=String, aluno=Aluno) {
 }
 
 
+async function logarAluno(email=String, senha=String) {
+    try {
+
+        const login = {
+            email: email,
+            senha: senha
+        }
+
+        //metodo que que envia e conecta no backend para criar um aluno
+        const resposta = await fetch(`${url}app/aluno/logar`, {
+            method: 'POST',
+            headers: {
+                //seta o tipo de conteudo para json, para o backend entender que é um json
+                'Content-Type': 'application/json',
+            },
+            //transforma para string o json aluno
+            body: JSON.stringify(login)
+        });
+
+        // Verificar se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        // Converter resposta para json
+        const dadosResposta = await resposta.json();
+        
+
+        //retorna os dados da resposta para o frontend
+        const retorno = dadosResposta.retorno;
+        return retorno;
+        
+        //try e catch, igual o java
+    } catch (e) {
+        //mensagem de erro, como no front é menos comum n tem um tratamento completo
+        console.error('erro ao enviar:', e);
+    }
+    
+}
 
 
-export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno };
+
+export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno };

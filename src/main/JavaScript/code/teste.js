@@ -2,7 +2,7 @@ import Aluno from './Aluno.js';
 import Notas from './Notas.js';
 import Observacoes from './Observacoes.js';
 
-import { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno } from './Conecction.js';
+import { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno } from './Conecction.js';
 // TESTES
 
 
@@ -41,10 +41,7 @@ const alunoTeste = new Aluno(
 
 
 //console.log(await atualizarAluno("698bbb7fd4cbd13a00431f6e", alunoTeste));
-console.log("ANTES:")
-let listaAlunos = await exibirAlunoPorNome("Lima");
-console.log(listaAlunos);
-await atualizarAluno("698bbb7fd4cbd13a00431f6e", alunoTeste);
-console.log("DEPOIS:")  
-listaAlunos = await exibirAlunoPorNome("Lima");
-console.log(listaAlunos);   
+
+
+console.log(await logarAluno("lucas.cay@institutojef.org.br", "123456"));
+
