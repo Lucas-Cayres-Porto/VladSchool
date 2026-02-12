@@ -36,22 +36,28 @@ public class ExibirDisciplina extends HttpServlet {
         //pega qual tipo de busca a requisiçao quer
         String tipo =  req.getParameter("tipo");
 
+        // verificações de de qual tipo de retorno que tem que voltar
         if (tipo == null){
             out.println(modelo);
         } else if (tipo.equals("id")) {
 
+            // pegando o a disciplina que corresponde ao id procurado
             int id = Integer.parseInt(req.getParameter("id"));
 
             listaDisciplinas.add(disciplinaDAO.bucarPorId(id));
             disciplinas.put("disciplinas",listaDisciplinas);
             out.println(disciplinas);
+
         } else if (tipo.equals("todas")) {
+            // retorna uma lista com todas as disciplinas cadstradas no banco
 
             listaDisciplinas = disciplinaDAO.listarDisciplinas();
 
             disciplinas.put("disciplinas",listaDisciplinas);
             out.println(disciplinas);
         } else if (tipo.equals("nome")) {
+
+            // pegando a disciplina que tem aquele nome cadastrodo no banco
 
             String nome = req.getParameter("nome");
 

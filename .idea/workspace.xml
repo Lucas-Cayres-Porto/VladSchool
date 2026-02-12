@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="TrabalhoDSV2:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/Disciplinas.js" afterDir="false" />
+    <list default="true" id="6f76a4e9-c364-4a41-8de7-f7181e4ee722" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrabalhoDSV2_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrabalhoDSV2_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Conecction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/Conecction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,19 +24,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,35 +40,33 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectId" id="39TnxLwlgmJFhzHZMJAvC8FEShe" />
+  <component name="ProjectId" id="39Xb7Aq4wUolzHP0y6cMuoWuuYg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lucasporto-ieg/OneDrive - Instituto J&F/Área de Trabalho/Matérias TECH/Desenvolvimento/VladSchool/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lucasporto-ieg\OneDrive - Instituto J&amp;F\Área de Trabalho\Matérias TECH\Desenvolvimento\VladSchool\src\main\resources" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat 11.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -86,8 +78,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="beb5dfca-9906-4acb-9b89-fb56bef1ae55" />
-        <option name="JNDI_PORT" value="1100" />
+        <option name="BASE_DIRECTORY_NAME" value="745dc6b2-7521-49a6-bcdf-7c522c12316e" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -95,7 +86,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54520" />
+        <option name="DEBUG_PORT" value="51988" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -168,20 +159,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="" />
-      <created>1770729173592</created>
+      <changelist id="6f76a4e9-c364-4a41-8de7-f7181e4ee722" name="Changes" comment="" />
+      <created>1770845193574</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1770729173592</updated>
-      <workItem from="1770729175273" duration="193000" />
-      <workItem from="1770729397546" duration="493000" />
-      <workItem from="1770731363308" duration="105000" />
-      <workItem from="1770731577514" duration="834000" />
-      <workItem from="1770733425187" duration="597000" />
-      <workItem from="1770738056219" duration="1057000" />
-      <workItem from="1770739523865" duration="621000" />
-      <workItem from="1770757362549" duration="2474000" />
-      <workItem from="1770807537342" duration="11653000" />
+      <updated>1770845193574</updated>
+      <workItem from="1770845195272" duration="281000" />
+      <workItem from="1770904530790" duration="1976000" />
     </task>
     <servers />
   </component>

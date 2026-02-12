@@ -25,17 +25,17 @@ async function criarAluno(aluno=Aluno) {
         // Converter resposta para json
         const dadosResposta = await resposta.json();
         console.log('sucesso:', dadosResposta);
-        
+
 
         //retorna os dados da resposta para o frontend
         return dadosResposta;
-        
+
         //try e catch, igual o java
     } catch (e) {
         //mensagem de erro, como no front é menos comum n tem um tratamento completo
         console.error('erro ao enviar:', e);
     }
-    
+
 }
 
 
@@ -84,7 +84,7 @@ async function exibirAlunoPorNome(nome=String) {
     } catch (e) {
         console.error('Erro ao buscar aluno por nome:', e);
     }
-    
+
 }
 
 
@@ -133,7 +133,7 @@ async function exibirAlunoPorSerie(serie=String) {
     } catch (e) {
         console.error('Erro ao buscar aluno por nome:', e);
     }
-    
+
 }
 
 
@@ -182,7 +182,7 @@ async function exibirAlunoPorStatus(status=String) {
     } catch (e) {
         console.error('Erro ao buscar aluno por nome:', e);
     }
-    
+
 }
 
 
@@ -235,7 +235,7 @@ async function exibirAlunoPorIndex(index=String) {
     } catch (e) {
         console.error('Erro ao buscar aluno por nome:', e);
     }
-    
+
 }
 
 
@@ -263,7 +263,7 @@ async function deletarAluno(id=String) {
     } catch (e) {
         console.error('Erro ao buscar aluno por nome:', e);
     }
-    
+
 }
 
 
@@ -292,17 +292,17 @@ async function atualizarAluno(id=String, aluno=Aluno) {
         // Converter resposta para json
         const dadosResposta = await resposta.json();
         console.log('sucesso:', dadosResposta);
-        
+
 
         //retorna os dados da resposta para o frontend
         return dadosResposta;
-        
+
         //try e catch, igual o java
     } catch (e) {
         //mensagem de erro, como no front é menos comum n tem um tratamento completo
         console.error('erro ao enviar:', e);
     }
-    
+
 }
 
 

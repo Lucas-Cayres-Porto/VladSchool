@@ -55,14 +55,13 @@ public class AtualizarDisciplina extends HttpServlet {
             String jsonString = jsonBuilder.toString();
 
 
-            //objeto que o metodo atualizar utiliza
             //convert json string para json bson, e depois para um objeto disciplina
             Disciplinas disciplinas = Disciplinas.deJson(Document.parse(jsonString));
 
             //pega o id para indentificar oq atualizar
             int id = Integer.parseInt(req.getParameter("id"));
 
-            //atualiza o aluno
+            //atualiza a Disciplina
             disciplinaDAO.atualizarDisciplina(id, disciplinas.paraJson());
 
 

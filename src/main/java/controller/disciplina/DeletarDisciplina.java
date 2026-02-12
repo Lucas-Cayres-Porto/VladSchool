@@ -39,11 +39,11 @@ public class DeletarDisciplina extends HttpServlet {
 
 
 
-            //pega _id para deletar o aluno
+            //pega o id_disciplina para deletar a determinada disciplina
             int id = Integer.parseInt(req.getParameter("id_disciplina"));
 
 
-            //deleta o aluno
+            //deleta a disciplina
             disciplinaDAO.deletarDisciplina(id);
 
             //cria e manda mensagem de sucesso
