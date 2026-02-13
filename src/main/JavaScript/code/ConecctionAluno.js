@@ -1,4 +1,6 @@
 import Aluno from './Aluno.js';
+import Notas from './Notas.js';
+import Observacoes from './Observacoes.js';
 
 const url = 'http://localhost:8080/TrabalhoDSV2/';
 
@@ -6,7 +8,7 @@ async function criarAluno(aluno=Aluno) {
     try {
         aluno = aluno.paraJson();
 
-        //metodo que que envia e conecta no backend para criar um aluno
+        //metodo que que envia e conecta no backend para criar um aluno'
         const resposta = await fetch(`${url}app/aluno/criar`, {
             method: 'POST',
             headers: {
@@ -239,6 +241,7 @@ async function exibirAlunoPorIndex(index=String) {
 }
 
 
+
 async function deletarAluno(id=String) {
     try {
         //constante do tipo de busca
@@ -306,6 +309,8 @@ async function atualizarAluno(id=String, aluno=Aluno) {
 }
 
 
+
+
 async function logarAluno(email=String, senha=String) {
     try {
 
@@ -347,5 +352,143 @@ async function logarAluno(email=String, senha=String) {
 }
 
 
+async function exibirAlunoPorId(id=String) {
+    try {
+        //constante do tipo de busca
+        const tipo = "id";
+        //cria a url com os parametros, e usa fetch para fazer a requisição get
+        const resposta = await fetch(`${url}app/aluno/exibir?tipo=${tipo}&id=${(id)}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        //verifica se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
 
-export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno };
+        //converte a resposta para json
+        const dadosResposta = await resposta.json();
+        //separa da resposta de sucesso para resposta de aluno
+        const alunosArray = dadosResposta.alunos;
+
+
+        if (Array.isArray(alunosArray)) {
+            // lista para armazenar objetos aluno
+            const listaAlunos = [];
+            //pega o lenght da respsota
+            const length = alunosArray.length;
+            //for de respostas
+            for (let i = 0; i < length; i++) {
+
+                //converte cada json da resposta para um objeto aluno usando o metodo deJson da classe Aluno, e adiciona na lista de alunos
+                const alunoJson = alunosArray[i];
+                //converte para objeto
+                const alunoObj = Aluno.deJson(alunoJson);
+                //coloca na lista
+                listaAlunos.push(alunoObj);
+
+            }
+            //retorna lista de retorna
+            return listaAlunos;
+
+        }
+    } catch (e) {
+        console.error('Erro ao buscar aluno por nome:', e);
+    }
+    
+}
+
+async function adicionarObs(obs=Observacoes, id=String) {
+    const alunos = await exibirAlunoPorId(id);
+    const aluno = alunos[0];    
+    aluno.getObservacoes().push(obs);
+    await atualizarAluno(id, aluno);
+}
+
+
+// essa funcao só recria o aluno, maldito seja o mongo, de qualquer forma só seguir os paramentros colocando a objeto OBS que quer remover e o id aluno
+async function removerObs(obs, id=String) {
+    //busca o aluno
+    const alunos = await exibirAlunoPorId(id);
+        
+        if (!alunos || alunos.length === 0) {
+            throw new Error('Aluno não encontrado');
+        }
+        
+        //cria um novo objeto
+        const aluno = alunos[0];
+        const observacoes = aluno.getObservacoes();
+        
+        // Comparacao profunda das propriedades
+        const novasObservacoes = observacoes.filter(o => 
+            o.observacao !== obs.observacao
+        );
+
+        if (novasObservacoes.length === observacoes.length) {
+            console.log('Nenhuma observação correspondente encontrada');
+            return;
+        }
+
+        aluno.setObservacoes(novasObservacoes);
+
+        const resultado = await atualizarAluno(id, aluno);
+        return resultado;
+
+}
+
+async function atualizarObs(obsAntiga, id=String, novaObs) {
+    //busca o aluno
+    const alunos = await exibirAlunoPorId(id);
+        
+        if (!alunos || alunos.length === 0) {
+            throw new Error('Aluno não encontrado');
+        }
+        
+        //cria um novo objeto
+        const aluno = alunos[0];
+        const observacoes = aluno.getObservacoes();
+        
+        const index = observacoes.findIndex(o => 
+            o.observacao === obsAntiga.observacao
+        );
+
+        if (index === -1) {
+            throw new Error('Observação não encontrada');
+        }
+
+        observacoes[index] = novaObs;
+        const resultado = await atualizarAluno(id, aluno);
+        return resultado;
+}
+
+async function atualizarNota(nota=Notas, id=String, indice=integer) {
+    const alunos = await exibirAlunoPorId(id);
+    const aluno = alunos[0];    
+
+    if (indice < 0 || indice > 1) {
+        console.log("indice deve ser 0 ou 1");
+    }
+
+    // garante que o array exista
+    if (!aluno.notas) {
+        aluno.notas = [];
+    }
+    
+    
+    while (aluno.notas.length <= indice) {
+        aluno.notas.push(new Notas(-1, -1, 0, "null"));
+    }
+    
+    // Atualiza a nota (1 ou 2)
+    aluno.notas[indice] = nota;
+    
+    //salva no banco
+    await atualizarAluno(id, aluno);
+    
+    return true;
+}
+
+
+export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno, exibirAlunoPorId, adicionarObs, removerObs, atualizarObs, atualizarNota };

@@ -43,6 +43,19 @@ public class ExibirAluno extends HttpServlet {
         //compara as buscas
         if (tipo==null){
             out.println(modelo.toJson());
+        } else if (tipo.equals("id")) {
+
+
+            //busca por id
+            String id = req.getParameter("id");
+
+            //pesquisa no banco
+            listaAlunos = alunosDAO.buscarPorId(id);
+
+            //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
+            alunos.put("alunos", listaAlunos);
+            out.println(alunos.toJson());
+
         } else if (tipo.equals("index")) {
 
             //indice das paginas da busca (10 em 10 resultados)

@@ -27,6 +27,8 @@ class Aluno extends Usuario {
 
     getId() {return this.id;}
 
+    setObservacoes(observacoes) {this.observacoes = observacoes;}
+
 
     paraJson(){
         try{

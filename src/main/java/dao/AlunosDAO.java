@@ -3,6 +3,7 @@ package dao;
 import com.mongodb.client.*;
 import com.mongodb.client.model.*;
 import model.Aluno;
+import model.Notas;
 import org.bson.Document;
 import java.util.*;
 import conexao.Conectar;
@@ -22,6 +23,18 @@ public class AlunosDAO {
 
     public boolean criarAluno(Aluno aluno){
         try {
+            if (aluno.getNotas().size()>2){
+                while (aluno.getNotas().size() > 2) {
+                    aluno.getNotas().remove(aluno.getNotas().size() - 1); // Remove a última
+                }
+            }
+
+            for (int i = 0; i < aluno.getNotas().size(); i++) {
+                if (aluno.getNotas().get(i) == null) {
+                    aluno.getNotas().set(i, new Notas(-1, -1, 0, "null"));
+                }
+            }
+
             Document alunoJson = aluno.paraJson();
             colecao.insertOne(alunoJson);
             return true;
@@ -111,6 +124,28 @@ public class AlunosDAO {
         try {
 
 
+            //insere no json
+            while (cursor.hasNext()) {
+                alunos.add(cursor.next());
+            }
+        }catch (Exception e){
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+        }
+        finally {
+            cursor.close();
+            return alunos;
+        }
+    }
+
+    public List<Document> buscarPorId(String id){
+        Document filtro = new Document();
+        List<Document> alunos = new ArrayList<>();
+        filtro.append("tipo", "aluno");
+        ObjectId objectId = new ObjectId(id);
+        filtro.append("_id", objectId);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
             //insere no json
             while (cursor.hasNext()) {
                 alunos.add(cursor.next());
