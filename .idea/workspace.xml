@@ -9,7 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="6f76a4e9-c364-4a41-8de7-f7181e4ee722" name="Changes" comment="" />
+=======
+    <list default="true" id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Aluno.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/ConecctionAluno.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/ConnectionDisciplina.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Disciplina.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Notas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Observacoes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Usuario.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/tempCodeRunnerFile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/teste.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DisciplinaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DisciplinaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Disciplinas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Disciplinas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testes/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testes/Teste.java" afterDir="false" />
+    </list>
+>>>>>>> a36db517a6792990b53799bc6b74b3a16983886d
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +48,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -38,8 +65,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -50,14 +76,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+=======
+    "Application.Teste.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.SmartAPI.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/lucasporto-ieg/OneDrive - Instituto J&F/Área de Trabalho/Matérias TECH/Desenvolvimento/VladSchool/src/main/resources",
+>>>>>>> a36db517a6792990b53799bc6b74b3a16983886d
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+<<<<<<< HEAD
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -66,6 +102,22 @@
   }
 }]]></component>
   <component name="RunManager">
+=======
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucasporto-ieg\OneDrive - Instituto J&amp;F\Área de Trabalho\Matérias TECH\Desenvolvimento\VladSchool\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Smart Tomcat.SmartAPI">
+>>>>>>> a36db517a6792990b53799bc6b74b3a16983886d
     <configuration name="Tomcat 11.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -153,6 +205,36 @@
         </option>
       </method>
     </configuration>
+    <configuration name="SmartAPI" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Users\nicolasoliveira-ieg\.SmartTomcat\TrabalhoDSV2\TrabalhoDSV2" />
+      <option name="contextPath" value="/TrabalhoDSV2" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/11.0.11" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../../apache-tomcat-11.0.11" />
+          <option name="version" value="11.0.11.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="TrabalhoDSV2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Smart Tomcat.SmartAPI" />
+      <item itemvalue="Tomcat Server.Tomcat 11.0.11" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -171,5 +253,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

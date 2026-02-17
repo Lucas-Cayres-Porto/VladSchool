@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/app/disciplina/exibir")
+    @WebServlet("/app/disciplina/exibir")
 public class ExibirDisciplina extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
@@ -46,15 +46,19 @@ public class ExibirDisciplina extends HttpServlet {
 
             listaDisciplinas.add(disciplinaDAO.bucarPorId(id));
             disciplinas.put("disciplinas",listaDisciplinas);
+<<<<<<< HEAD
             out.println(disciplinas);
 
+=======
+            out.println(disciplinas.toJson());
+>>>>>>> a36db517a6792990b53799bc6b74b3a16983886d
         } else if (tipo.equals("todas")) {
             // retorna uma lista com todas as disciplinas cadstradas no banco
 
             listaDisciplinas = disciplinaDAO.listarDisciplinas();
 
             disciplinas.put("disciplinas",listaDisciplinas);
-            out.println(disciplinas);
+            out.println(disciplinas.toJson());
         } else if (tipo.equals("nome")) {
 
             // pegando a disciplina que tem aquele nome cadastrodo no banco
@@ -63,7 +67,16 @@ public class ExibirDisciplina extends HttpServlet {
 
             listaDisciplinas.add(disciplinaDAO.bucarPorNome(nome));
             disciplinas.put("disciplinas",listaDisciplinas);
-            out.println(disciplinas);
+            out.println(disciplinas.toJson());
+
+        }
+        else if (tipo.equals("_id")) {
+
+            String id = req.getParameter("_id");
+
+            listaDisciplinas.add(disciplinaDAO.bucarPorObId(id));
+            disciplinas.put("disciplinas",listaDisciplinas);
+            out.println(disciplinas.toJson());
 
         }
     }

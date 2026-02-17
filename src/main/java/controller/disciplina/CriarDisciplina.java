@@ -67,7 +67,7 @@ public class CriarDisciplina extends HttpServlet {
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno Criado\",");
+            message.append("\"message\": \"disciplina criada\",");
             message.append("\"causa\": \"").append(disciplina.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
@@ -79,7 +79,7 @@ public class CriarDisciplina extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao criar aluno\",");
+            errorBuilder.append("\"message\": \"Erro ao criar disciplina\",");
             errorBuilder.append("\"causa\": \"").append(e.getMessage()).append("\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());
