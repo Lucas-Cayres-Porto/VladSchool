@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f76a4e9-c364-4a41-8de7-f7181e4ee722" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfessoresDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfessoresDAO.java" afterDir="false" />
-    </list>
+    <list default="true" id="6f76a4e9-c364-4a41-8de7-f7181e4ee722" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +165,7 @@
       <workItem from="1770845195272" duration="281000" />
       <workItem from="1770904530790" duration="2703000" />
       <workItem from="1771341058863" duration="245000" />
-      <workItem from="1771341618872" duration="3494000" />
+      <workItem from="1771341618872" duration="3961000" />
     </task>
     <servers />
   </component>
