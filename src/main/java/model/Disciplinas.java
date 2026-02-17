@@ -14,12 +14,21 @@ public class Disciplinas {
         this.id=id;
         this.nome=nome;
     }
+
+    public Disciplinas(String nome){
+        this.nome=nome;
+        this.id=-1;
+    }
+
     public int getId(){
         return this.id;
     }
     public String getNome(){
         return this.nome;
     }
+
+    public void setId(int id) {this.id = id;}
+
     public static Disciplinas deJson(Document jsonDoc) {
         try{
             // Extrair dados do usuário

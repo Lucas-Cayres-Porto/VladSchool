@@ -60,7 +60,7 @@ public class AtualizarDisciplina extends HttpServlet {
             Disciplinas disciplinas = Disciplinas.deJson(Document.parse(jsonString));
 
             //pega o id para indentificar oq atualizar
-            int id = Integer.parseInt(req.getParameter("id"));
+            String id = req.getParameter("id");
 
             //atualiza o aluno
             disciplinaDAO.atualizarDisciplina(id, disciplinas.paraJson());
@@ -70,7 +70,7 @@ public class AtualizarDisciplina extends HttpServlet {
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno atualizado\",");
+            message.append("\"message\": \"disciplina atualizado\",");
             message.append("\"causa\": \"").append(disciplinas.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
@@ -82,7 +82,7 @@ public class AtualizarDisciplina extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao atualizar aluno\",");
+            errorBuilder.append("\"message\": \"Erro ao atualizar disciplina\",");
             errorBuilder.append("\"causa\": \"").append(e.getMessage()).append("\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());

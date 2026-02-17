@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/app/disciplina/exibir")
+    @WebServlet("/app/disciplina/exibir")
 public class ExibirDisciplina extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
@@ -44,20 +44,29 @@ public class ExibirDisciplina extends HttpServlet {
 
             listaDisciplinas.add(disciplinaDAO.bucarPorId(id));
             disciplinas.put("disciplinas",listaDisciplinas);
-            out.println(disciplinas);
+            out.println(disciplinas.toJson());
         } else if (tipo.equals("todas")) {
 
             listaDisciplinas = disciplinaDAO.listarDisciplinas();
 
             disciplinas.put("disciplinas",listaDisciplinas);
-            out.println(disciplinas);
+            out.println(disciplinas.toJson());
         } else if (tipo.equals("nome")) {
 
             String nome = req.getParameter("nome");
 
             listaDisciplinas.add(disciplinaDAO.bucarPorNome(nome));
             disciplinas.put("disciplinas",listaDisciplinas);
-            out.println(disciplinas);
+            out.println(disciplinas.toJson());
+
+        }
+        else if (tipo.equals("_id")) {
+
+            String id = req.getParameter("_id");
+
+            listaDisciplinas.add(disciplinaDAO.bucarPorObId(id));
+            disciplinas.put("disciplinas",listaDisciplinas);
+            out.println(disciplinas.toJson());
 
         }
     }

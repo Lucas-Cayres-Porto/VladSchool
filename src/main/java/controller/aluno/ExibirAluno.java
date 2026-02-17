@@ -74,7 +74,6 @@ public class ExibirAluno extends HttpServlet {
 
             //busca na dao, o nome similar to
             listaAlunos = alunosDAO.buscarPorNome(nome);
-            System.out.println(listaAlunos);
 
             //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
             alunos.put("alunos", listaAlunos);

@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/app/disciplina/deletar")
+    @WebServlet("/app/disciplina/deletar")
 public class DeletarDisciplina extends HttpServlet {
     DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -40,7 +40,7 @@ public class DeletarDisciplina extends HttpServlet {
 
 
             //pega _id para deletar o aluno
-            int id = Integer.parseInt(req.getParameter("id_disciplina"));
+            String id = req.getParameter("id");
 
 
             //deleta o aluno
@@ -50,7 +50,7 @@ public class DeletarDisciplina extends HttpServlet {
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno Deletado\"");
+            message.append("\"message\": \"Disciplina Deletado\"");
             message.append("}");
             out.println(message.toString());
 
@@ -61,7 +61,7 @@ public class DeletarDisciplina extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao deletar aluno\"");
+            errorBuilder.append("\"message\": \"Erro ao deletar disciplina\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());
         }
