@@ -1,6 +1,5 @@
 package controller.professor;
 
-import dao.AlunosDAO;
 import dao.ProfessorDAO;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

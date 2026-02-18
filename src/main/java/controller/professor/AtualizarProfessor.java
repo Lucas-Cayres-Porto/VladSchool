@@ -13,25 +13,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/app/professor/criar")
-public class CriarProfessor extends HttpServlet {
+@WebServlet("/app/professor/atualizar")
+public class AtualizarProfessor extends HttpServlet {
     ProfessorDAO professorDAO = new ProfessorDAO();
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
 
         // classe necessaria para escrever no http e mandar o json de resposta
         PrintWriter out = resp.getWriter();
 
-
-
-
         //muda de html para json
         resp.setContentType("application/json");
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
-        //json que vai ser utilizado para criar o usuario no banco
+        //json que vai ser utilizado para atualizar o usuario no banco
         StringBuilder jsonBuilder = new StringBuilder(); // json em si (O string builder é a versão melhorada da String, pq é mutavel ent n cria objetos desncessarios na memoria acada mudança)
         String line; // linha do json (variavel temporaria)
 
@@ -54,19 +50,22 @@ public class CriarProfessor extends HttpServlet {
             String jsonString = jsonBuilder.toString();
 
 
-            //convert json string para json bson, e depois para um objeto Professor
+            //objeto que o metodo atualizar utiliza
+            //convert json string para json bson, e depois para um objeto professor
             Professor professor = Professor.deJson(Document.parse(jsonString));
 
+            //pega o id para indentificar oq atualizar
+            String id = req.getParameter("_id");
 
-            //cria o professor
-            professorDAO.criarProfessor(professor);
+            //atualiza o professor
+            professorDAO.atualizarProfessor(id, professor.paraJson());
 
 
             //cria e manda mensagem de sucesso
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno Criado\",");
+            message.append("\"message\": \"Aluno atualizado\",");
             message.append("\"causa\": \"").append(professor.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
@@ -78,7 +77,7 @@ public class CriarProfessor extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao criar aluno\",");
+            errorBuilder.append("\"message\": \"Erro ao atualizar aluno\",");
             errorBuilder.append("\"causa\": \"").append(e.getMessage()).append("\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());
