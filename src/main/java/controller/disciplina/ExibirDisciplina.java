@@ -46,12 +46,8 @@ public class ExibirDisciplina extends HttpServlet {
 
             listaDisciplinas.add(disciplinaDAO.bucarPorId(id));
             disciplinas.put("disciplinas",listaDisciplinas);
-<<<<<<< HEAD
-            out.println(disciplinas);
 
-=======
             out.println(disciplinas.toJson());
->>>>>>> a36db517a6792990b53799bc6b74b3a16983886d
         } else if (tipo.equals("todas")) {
             // retorna uma lista com todas as disciplinas cadstradas no banco
 

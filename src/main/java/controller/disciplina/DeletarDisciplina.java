@@ -37,16 +37,8 @@ public class DeletarDisciplina extends HttpServlet {
         //try de erro
         try {
 
-
-
-<<<<<<< HEAD
-            //pega o id_disciplina para deletar a determinada disciplina
-            int id = Integer.parseInt(req.getParameter("id_disciplina"));
-=======
             //pega _id para deletar o aluno
             String id = req.getParameter("id");
->>>>>>> a36db517a6792990b53799bc6b74b3a16983886d
-
 
             //deleta a disciplina
             disciplinaDAO.deletarDisciplina(id);
