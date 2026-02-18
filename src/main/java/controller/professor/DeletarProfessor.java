@@ -44,7 +44,7 @@ public class DeletarProfessor extends HttpServlet {
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno Deletado\"");
+            message.append("\"message\": \"Professor Deletado\"");
             message.append("}");
             out.println(message.toString());
 
@@ -55,7 +55,7 @@ public class DeletarProfessor extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao deletar aluno\"");
+            errorBuilder.append("\"message\": \"Erro ao deleta professor\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());
         }
