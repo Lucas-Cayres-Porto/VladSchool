@@ -170,5 +170,19 @@ public class ProfessorDAO {
             return false;
         }
     }
-
+    public boolean logar(String email, String senha){
+        Document filtro = new Document();
+        filtro.append("email", email);
+        filtro.append("senha", senha);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
+            if (cursor.hasNext()){
+                return true;
+            }
+            return false;
+        }
+        finally {
+            cursor.close();
+        }
+    }
 }
