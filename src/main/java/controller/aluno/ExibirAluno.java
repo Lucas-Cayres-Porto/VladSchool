@@ -101,6 +101,14 @@ public class ExibirAluno extends HttpServlet {
             //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
             alunos.put("alunos", listaAlunos);
             out.println(alunos.toJson());
+        } else if (tipo.equals("email")) {
+
+            String email = req.getParameter("email");
+
+            listaAlunos = alunosDAO.buscarPorEmail(email);
+
+            alunos.put("alunos", listaAlunos);
+            out.println(alunos.toJson());
         }
     }
 

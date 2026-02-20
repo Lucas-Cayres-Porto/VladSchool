@@ -11,6 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="59ebe6e6-b60c-46ce-bbd1-ae32c5d4597a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/professor/ExibirProfessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/professor/ExibirProfessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filters/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filters/CorsFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +70,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "configurable.group.appearance",
@@ -168,7 +174,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771426606493</updated>
-      <workItem from="1771426608799" duration="4924000" />
+      <workItem from="1771426608799" duration="6996000" />
+      <workItem from="1771540065455" duration="10380000" />
+      <workItem from="1771601379104" duration="2942000" />
     </task>
     <servers />
   </component>

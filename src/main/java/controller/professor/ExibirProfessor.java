@@ -51,7 +51,7 @@ public class ExibirProfessor extends HttpServlet {
             listaProfessor = professorDAO.buscarPorNome(nome);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("alunos", listaProfessor);
+            alunos.put("professores", listaProfessor);
             out.println(alunos.toJson());
 
         } else if (tipo.equals("listar")) {
@@ -60,7 +60,7 @@ public class ExibirProfessor extends HttpServlet {
             listaProfessor = professorDAO.listarProfessores();
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("alunos", listaProfessor);
+            alunos.put("professores", listaProfessor);
             out.println(alunos.toJson());
         } else if (tipo.equals("disciplina")) {
 
@@ -70,7 +70,29 @@ public class ExibirProfessor extends HttpServlet {
             listaProfessor = professorDAO.buscarPorDisciplina(idDisciplina);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("alunos", listaProfessor);
+            alunos.put("professores", listaProfessor);
+            out.println(alunos.toJson());
+
+        } else if (tipo.equals("idProfessor")) {
+
+            //pega o idProfessor
+            int idProfessor = Integer.parseInt(req.getParameter("idProfessor"));
+
+            listaProfessor = professorDAO.buscarPorId(idProfessor);
+
+            //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
+            alunos.put("professores", listaProfessor);
+            out.println(alunos.toJson());
+
+        } else if (tipo.equals("email")) {
+
+            //pega o idProfessor
+            String email = req.getParameter("email");
+
+            listaProfessor = professorDAO.buscarPorEmail(email);
+
+            //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
+            alunos.put("professores", listaProfessor);
             out.println(alunos.toJson());
 
         }
