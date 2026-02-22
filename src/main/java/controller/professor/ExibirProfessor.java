@@ -33,7 +33,7 @@ public class ExibirProfessor extends HttpServlet {
 
         //carrega um json modelo
         Document modelo = JsonLoader.carregar("Jsons/modelJson.json");
-        Document alunos = modelo;
+        Document professores = modelo;
 
         //pega qual tipo de busca a requisiçao quer
         String tipo =  req.getParameter("tipo");
@@ -51,8 +51,8 @@ public class ExibirProfessor extends HttpServlet {
             listaProfessor = professorDAO.buscarPorNome(nome);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("professores", listaProfessor);
-            out.println(alunos.toJson());
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
 
         } else if (tipo.equals("listar")) {
 
@@ -60,8 +60,8 @@ public class ExibirProfessor extends HttpServlet {
             listaProfessor = professorDAO.listarProfessores();
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("professores", listaProfessor);
-            out.println(alunos.toJson());
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
         } else if (tipo.equals("disciplina")) {
 
             //pega na requisição o id das disciplinas lecionadas
@@ -70,30 +70,31 @@ public class ExibirProfessor extends HttpServlet {
             listaProfessor = professorDAO.buscarPorDisciplina(idDisciplina);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("professores", listaProfessor);
-            out.println(alunos.toJson());
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
 
         } else if (tipo.equals("idProfessor")) {
 
             //pega o idProfessor
             int idProfessor = Integer.parseInt(req.getParameter("idProfessor"));
-
-            listaProfessor = professorDAO.buscarPorId(idProfessor);
+            listaProfessor = professorDAO.buscarPorIdProfessor(idProfessor);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("professores", listaProfessor);
-            out.println(alunos.toJson());
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
 
-        } else if (tipo.equals("email")) {
+        }
+
+        else if (tipo.equals("id")) {
 
             //pega o idProfessor
-            String email = req.getParameter("email");
+            String id = req.getParameter("_id");
 
-            listaProfessor = professorDAO.buscarPorEmail(email);
+            listaProfessor = professorDAO.buscarPorObId(id);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("professores", listaProfessor);
-            out.println(alunos.toJson());
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
 
         }
     }

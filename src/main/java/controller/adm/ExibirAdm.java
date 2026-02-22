@@ -20,7 +20,7 @@ public class ExibirAdm extends HttpServlet {
 
 
         //lista de alunos, todos os metodos de busca retornam isso
-        List<Document> listaAlunos;
+        List<Document> listaAdms;
 
 
         //muda de html para json
@@ -32,7 +32,7 @@ public class ExibirAdm extends HttpServlet {
 
         //carrega um json modelo
         Document modelo = JsonLoader.carregar("Jsons/modelJson.json");
-        Document alunos = modelo;
+        Document adms = modelo;
 
         //pega qual tipo de busca a requisiçao quer
         String tipo =  req.getParameter("tipo");
@@ -47,12 +47,16 @@ public class ExibirAdm extends HttpServlet {
             //busca por email
             String email = req.getParameter("email");
 
+            System.out.println(email);
+
             //pesquisa no banco
-            listaAlunos = admDAO.buscarPorEmail(email);
+            listaAdms = admDAO.buscarPorEmail(email);
+
+            System.out.println(listaAdms);
 
             //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
-            alunos.put("adm", listaAlunos);
-            out.println(alunos.toJson());
+            adms.put("adms  ", listaAdms);
+            out.println(adms.toJson());
 
         }
     }

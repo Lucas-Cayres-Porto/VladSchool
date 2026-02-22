@@ -2,6 +2,8 @@ package dao;
 
 import com.mongodb.client.*;
 import com.mongodb.client.model.*;
+import model.Aluno;
+import model.Notas;
 import model.Professor;
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -21,9 +23,23 @@ public class ProfessorDAO {
         this.colecao = conexao.getInstancia().getCollection("Usuarios");
     }
 
+    public boolean criarProfessor(Professor professor){
+        try {
 
 
-    public List<Document> buscarPorNome(String nome){
+
+            Document professorJson = professor.paraJson();
+            colecao.insertOne(professorJson);
+            return true;
+        }catch (Exception e){
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+            return false;
+        }
+    }
+
+
+    public List<Document> buscarPorNome(String nome) {
         List<Document> professores = new ArrayList<>();
         Document filtro = new Document();
         filtro.append("tipo", "professor");
@@ -33,6 +49,48 @@ public class ProfessorDAO {
         MongoCursor<Document> cursor = colecao.find(filtro).iterator();
         try {
 
+            while (cursor.hasNext()) {
+                professores.add(cursor.next());
+            }
+        } catch (Exception e) {
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+        } finally {
+            cursor.close();
+            return professores;
+        }
+    }
+
+    public List<Document> buscarPorIdProfessor(int id) {
+        List<Document> professores = new ArrayList<>();
+        Document filtro = new Document();
+        filtro.append("tipo", "professor");
+        filtro.append("dados_professor.id_professor",id);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
+
+            while (cursor.hasNext()) {
+                professores.add(cursor.next());
+            }
+        } catch (Exception e) {
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+        } finally {
+            cursor.close();
+            return professores;
+        }
+    }
+
+
+    public List<Document> buscarPorObId(String id){
+        Document filtro = new Document();
+        List<Document> professores = new ArrayList<>();
+        filtro.append("tipo", "professor");
+        ObjectId objectId = new ObjectId(id);
+        filtro.append("_id", objectId);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
+            //insere no json
             while (cursor.hasNext()) {
                 professores.add(cursor.next());
             }
@@ -82,8 +140,6 @@ public class ProfessorDAO {
     }
 
 
-
-
     public int enviarObservacao(String idAluno, int idProfessor, String textoObservacao) {
         try {
             ObjectId alunoId = new ObjectId(idAluno);
@@ -118,7 +174,7 @@ public class ProfessorDAO {
         }
     }
 
-    public int deletarProfessor(String id){
+    public int deletarProfessor(String id) {
         try {
 
 
@@ -159,17 +215,7 @@ public class ProfessorDAO {
         }
     }
 
-    public boolean criarProfessor(Professor professor){
-        try {
-            Document professorJson = professor.paraJson();
-            colecao.insertOne(professorJson);
-            return true;
-        }catch (Exception e){
-            ExceptionHandler eh = new ExceptionHandler(e);
-            eh.printExeption();
-            return false;
-        }
-    }
+
     public boolean logar(String email, String senha){
         Document filtro = new Document();
         filtro.append("tipo", "professor");
@@ -186,44 +232,7 @@ public class ProfessorDAO {
             cursor.close();
         }
     }
-    public List<Document> buscarPorId(int id){
-        List<Document> professores = new ArrayList<>();
-        Document filtro = new Document();
-        filtro.append("tipo", "professor");
-        filtro.append("dados_professor.id_professor",id);
-        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
-        try {
 
-            while (cursor.hasNext()) {
-                professores.add(cursor.next());
-            }
-        }catch (Exception e){
-            ExceptionHandler eh = new ExceptionHandler(e);
-            eh.printExeption();
-        }
-        finally {
-            cursor.close();
-            return professores;
-        }
-    }
-    public List<Document> buscarPorEmail(String email){
-        Document filtro = new Document();
-        List<Document> professores = new ArrayList<>();
-        filtro.append("tipo", "professor");
-        filtro.append("email", email);
-        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
-        try {
-            //insere no json
-            while (cursor.hasNext()) {
-                professores.add(cursor.next());
-            }
-        }catch (Exception e){
-            ExceptionHandler eh = new ExceptionHandler(e);
-            eh.printExeption();
-        }
-        finally {
-            cursor.close();
-            return professores;
-        }
-    }
+
 }
+
