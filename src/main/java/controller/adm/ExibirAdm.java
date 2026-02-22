@@ -10,7 +10,6 @@ import util.JsonLoader;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.http.HttpClient;
 import java.util.List;
 
 @WebServlet("/app/adm/exibir")
