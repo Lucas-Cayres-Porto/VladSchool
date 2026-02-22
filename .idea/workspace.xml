@@ -10,32 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/NotasMostrar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/stud.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/ExibirAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/LogarAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/AtualizarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/CriarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/DeletarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/EnviarObservacaoProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/ExibirProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/LogarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AdmDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrabalhoDSV2_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrabalhoDSV2_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/ConecctionAluno.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/ConecctionAluno.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filters/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filters/CorsFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Professor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
