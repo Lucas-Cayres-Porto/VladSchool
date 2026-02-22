@@ -1,31 +1,26 @@
-package controller.disciplina;
+package controller.professor;
 
-import jakarta.servlet.http.HttpServlet;
-import dao.DisciplinaDAO;
-import model.Disciplinas;
-import util.ExceptionHandler;
+import dao.ProfessorDAO;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Professor;
 import org.bson.Document;
+import util.ExceptionHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/app/disciplina/atualizar")
-public class AtualizarDisciplina extends HttpServlet {
-
-    DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
-
+@WebServlet("/app/professor/atualizar")
+public class AtualizarProfessor extends HttpServlet {
+    ProfessorDAO professorDAO = new ProfessorDAO();
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
 
         // classe necessaria para escrever no http e mandar o json de resposta
         PrintWriter out = resp.getWriter();
-
-
-
 
         //muda de html para json
         resp.setContentType("application/json");
@@ -55,22 +50,23 @@ public class AtualizarDisciplina extends HttpServlet {
             String jsonString = jsonBuilder.toString();
 
 
-            //convert json string para json bson, e depois para um objeto disciplina
-            Disciplinas disciplinas = Disciplinas.deJson(Document.parse(jsonString));
+            //objeto que o metodo atualizar utiliza
+            //convert json string para json bson, e depois para um objeto professor
+            Professor professor = Professor.deJson(Document.parse(jsonString));
 
             //pega o id para indentificar oq atualizar
-            String id = req.getParameter("id");
+            String id = req.getParameter("_id");
 
-            //atualiza a Disciplina
-            disciplinaDAO.atualizarDisciplina(id, disciplinas.paraJson());
+            //atualiza o professor
+            professorDAO.atualizarProfessor(id, professor.paraJson());
 
 
             //cria e manda mensagem de sucesso
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"disciplina atualizado\",");
-            message.append("\"causa\": \"").append(disciplinas.getNome()).append("\"");
+            message.append("\"message\": \"Aluno atualizado\",");
+            message.append("\"causa\": \"").append(professor.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
 
@@ -81,7 +77,7 @@ public class AtualizarDisciplina extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao atualizar disciplina\",");
+            errorBuilder.append("\"message\": \"Erro ao atualizar aluno\",");
             errorBuilder.append("\"causa\": \"").append(e.getMessage()).append("\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());

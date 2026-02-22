@@ -27,9 +27,6 @@ public class CriarDisciplina extends HttpServlet {
         // classe necessaria para escrever no http e mandar o json de resposta
         PrintWriter out = resp.getWriter();
 
-
-
-
         //muda de html para json
         resp.setContentType("application/json");
         req.setCharacterEncoding("UTF-8");
@@ -58,14 +55,11 @@ public class CriarDisciplina extends HttpServlet {
             String jsonString = jsonBuilder.toString();
 
 
-            //objeto que o metodo criar utiliza
-
-
-            //convert json string para json bson, e depois para um objeto aluno
+            //convert json string para json bson, e depois para um objeto Disciplina
             Disciplinas disciplina = Disciplinas.deJson(Document.parse(jsonString));
 
 
-            //cria o aluno
+            //cria a disciplina
             disciplinaDAO.criarDisciplina(disciplina);
 
 

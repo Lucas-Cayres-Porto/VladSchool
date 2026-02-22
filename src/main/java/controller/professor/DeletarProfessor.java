@@ -1,23 +1,18 @@
-package controller.disciplina;
+package controller.professor;
 
-import dao.AlunosDAO;
-import jakarta.servlet.http.HttpServlet;
-import dao.DisciplinaDAO;
-import util.ExceptionHandler;
-import util.JsonLoader;
+import dao.ProfessorDAO;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.bson.Document;
+import util.ExceptionHandler;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
-    @WebServlet("/app/disciplina/deletar")
-public class DeletarDisciplina extends HttpServlet {
-    DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
+@WebServlet("/app/professor/deletar")
+public class DeletarProfessor extends HttpServlet {
+    ProfessorDAO professorDAO = new ProfessorDAO();
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
 
@@ -37,17 +32,19 @@ public class DeletarDisciplina extends HttpServlet {
         //try de erro
         try {
 
-            //pega _id para deletar o aluno
-            String id = req.getParameter("id");
+            //pega _id para deletar o professor
+            String id = req.getParameter("_id");
 
-            //deleta a disciplina
-            disciplinaDAO.deletarDisciplina(id);
+
+            //deleta o professor
+            professorDAO.deletarProfessor(id);
+
 
             //cria e manda mensagem de sucesso
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Disciplina Deletado\"");
+            message.append("\"message\": \"Professor Deletado\"");
             message.append("}");
             out.println(message.toString());
 
@@ -58,7 +55,7 @@ public class DeletarDisciplina extends HttpServlet {
             StringBuilder errorBuilder = new StringBuilder();
             errorBuilder.append("{");
             errorBuilder.append("\"success\": false,");
-            errorBuilder.append("\"message\": \"Erro ao deletar disciplina\"");
+            errorBuilder.append("\"message\": \"Erro ao deleta professor\"");
             errorBuilder.append("}");
             out.println(errorBuilder.toString());
         }

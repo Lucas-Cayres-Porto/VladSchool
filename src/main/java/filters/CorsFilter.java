@@ -41,7 +41,7 @@ public class CorsFilter implements Filter {
         }
 
         //header principaç, permite filtrar a origem da requisição
-        httpResponse.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+        httpResponse.setHeader("Access-Control-Allow-Origin", "*");
 
         // Adiciona os filtros necessarios no header da requisção para permitir o front passar
         httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST");

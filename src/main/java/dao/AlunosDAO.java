@@ -214,6 +214,7 @@ public class AlunosDAO {
 
     public boolean logar(String email, String senha){
         Document filtro = new Document();
+        filtro.append("tipo", "aluno");
         filtro.append("email", email);
         filtro.append("senha", senha);
         MongoCursor<Document> cursor = colecao.find(filtro).iterator();
@@ -225,6 +226,26 @@ public class AlunosDAO {
         }
         finally {
             cursor.close();
+        }
+    }
+    public List<Document> buscarPorEmail(String email){
+        Document filtro = new Document();
+        List<Document> alunos = new ArrayList<>();
+        filtro.append("tipo", "aluno");
+        filtro.append("email", email);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
+            //insere no json
+            while (cursor.hasNext()) {
+                alunos.add(cursor.next());
+            }
+        }catch (Exception e){
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+        }
+        finally {
+            cursor.close();
+            return alunos;
         }
     }
 
