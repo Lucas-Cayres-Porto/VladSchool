@@ -11,10 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="59ebe6e6-b60c-46ce-bbd1-ae32c5d4597a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adm/ExibirAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/adm/ExibirAdm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adm/LogarAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/adm/LogarAdm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/professor/ExibirProfessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/professor/ExibirProfessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +192,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="" />
+      <changelist id="59ebe6e6-b60c-46ce-bbd1-ae32c5d4597a" name="Changes" comment="" />
       <created>1770729173592</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -206,6 +203,7 @@
       <workItem from="1771618096508" duration="3459000" />
       <workItem from="1771627014914" duration="2236000" />
       <workItem from="1771772440449" duration="1306000" />
+      <workItem from="1771927469996" duration="3543000" />
     </task>
     <servers />
   </component>
