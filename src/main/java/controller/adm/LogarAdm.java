@@ -56,14 +56,10 @@ public class LogarAdm extends HttpServlet {
         String senha = Document.parse(jsonString).getString("senha");
 
 
-
-
         //pesquisa e retorna se a pessoa pode logar
         boolean retorno = AdmDAO.logar(email, senha);
         modelo.append("retorno", retorno);
         out.println(modelo.toJson());
-
-
 
     }
 }

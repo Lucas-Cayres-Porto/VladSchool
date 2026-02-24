@@ -55,7 +55,7 @@ public class ExibirAdm extends HttpServlet {
             System.out.println(listaAdms);
 
             //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
-            adms.put("adms  ", listaAdms);
+            adms.put("adms", listaAdms);
             out.println(adms.toJson());
 
         }

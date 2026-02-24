@@ -83,14 +83,23 @@ public class ExibirProfessor extends HttpServlet {
             professores.put("professores", listaProfessor);
             out.println(professores.toJson());
 
-        }
-
-        else if (tipo.equals("id")) {
+        } else if (tipo.equals("id")) {
 
             //pega o idProfessor
             String id = req.getParameter("_id");
 
             listaProfessor = professorDAO.buscarPorObId(id);
+
+            //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
+
+        } else if (tipo.equals("email")) {
+
+            //pega o idProfessor
+            String email = req.getParameter("email");
+
+            listaProfessor = professorDAO.buscarPorEmailProfessor(email);
 
             //coloca tuda a lista de professores( que é na verdade uma lista de jsons) em uma array no json
             professores.put("professores", listaProfessor);
