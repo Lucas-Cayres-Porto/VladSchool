@@ -1,6 +1,7 @@
 package filters;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -9,7 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+
 //como o front e back funcionam em portas e hosts diferentes, o CORS bloqueia o front do back isso n pode ocorrer para isso usamos essa classe que permite o front de acessar pelo navegador
+@WebFilter("/*")
 public class CorsFilter implements Filter {
 
     private static final Set<String> IPS_PERMITIDOS = new HashSet<>(Arrays.asList(

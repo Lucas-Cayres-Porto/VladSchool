@@ -396,6 +396,71 @@ async function logarProfessor(email=String, senha=String) {
 }
 
 
+async function enviarEmailProfessor(email=String) {
+    try {
+
+        const login = {
+            email: email
+        }
+
+        const resposta = await fetch(`${url}app/professor/email`, {
+            method: 'POST',
+            headers: {
+                //seta o tipo de conteudo para json, para o backend entender que é um json
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(login)
+        });
+
+        // Verificar se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        // Converter resposta para json
+        const dadosResposta = await resposta.json();
+        
+
+        //retorna os dados da resposta para o frontend
+        const retorno = dadosResposta.retorno;
+        return retorno; 
+        
+        //try e catch, igual o java
+    } catch (e) {
+        //mensagem de erro, como no front é menos comum n tem um tratamento completo
+        console.error('erro ao enviar:', e);
+    }
+    
+}
+
+
+async function recuperarProfessor(email=String, cod=String) {
+    try {
+
+        const dados = {
+            email: email,
+            codigo: cod
+        }
+
+        const resposta = await fetch(`${url}app/professor/recuperar`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dados)
+        });
+
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        const dadosResposta = await resposta.json();
+        return dadosResposta;
+        
+    } catch (e) {
+        console.error('erro ao enviar:', e);
+    }
+}
 
 
 
@@ -408,4 +473,6 @@ async function logarProfessor(email=String, senha=String) {
 
 
 
-export {criarProfessor, exibirProfessorPorNome, exibirProfessorPorDisciplina, exibirProfessorPorId, exibirProfessorPorIdProfessor, exibirProfessorTodos, deletarProfessor, atualizarProfessor, logarProfessor};
+
+
+export {criarProfessor, exibirProfessorPorNome, exibirProfessorPorDisciplina, exibirProfessorPorId, exibirProfessorPorIdProfessor, exibirProfessorTodos, deletarProfessor, atualizarProfessor, logarProfessor, enviarEmailProfessor, recuperarProfessor};

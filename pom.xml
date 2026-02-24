@@ -19,6 +19,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
         <!-- MongoDB Java Driver -->
         <!-- Source: https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
         <dependency>

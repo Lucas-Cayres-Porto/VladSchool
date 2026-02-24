@@ -491,4 +491,90 @@ async function atualizarNota(nota=Notas, id=String, indice=integer) {
 }
 
 
-export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno, exibirAlunoPorId, adicionarObs, removerObs, atualizarObs, atualizarNota };
+//atualiza o aluno mas adicionando uma nota no fim do array
+async function criarNota(nota=Notas, id=String) {
+    const alunos = await exibirAlunoPorId(id);
+    const aluno = alunos[0];    
+
+    // garante que o array exista
+    if (!aluno.notas) {
+        aluno.notas = [];
+    }
+    
+    // Adiciona a nova nota ao final do array
+    aluno.notas.push(nota);
+    
+    //salva no banco
+    await atualizarAluno(id, aluno);
+    
+    return true;
+}
+
+async function enviarEmailAluno(email=String) {
+    try {
+
+        const login = {
+            email: email
+        }
+
+        const resposta = await fetch(`${url}app/aluno/email`, {
+            method: 'POST',
+            headers: {
+                //seta o tipo de conteudo para json, para o backend entender que é um json
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(login)
+        });
+
+        // Verificar se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        // Converter resposta para json
+        const dadosResposta = await resposta.json();
+        
+
+        //retorna os dados da resposta para o frontend
+        const retorno = dadosResposta.retorno;
+        return retorno; 
+        
+        //try e catch, igual o java
+    } catch (e) {
+        //mensagem de erro, como no front é menos comum n tem um tratamento completo
+        console.error('erro ao enviar:', e);
+    }
+    
+}
+
+
+async function recuperarAluno(email=String, cod=String) {
+    try {
+
+        const dados = {
+            email: email,
+            codigo: cod
+        }
+
+        const resposta = await fetch(`${url}app/aluno/recuperar`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dados)
+        });
+
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        const dadosResposta = await resposta.json();
+        return dadosResposta;
+        
+    } catch (e) {
+        console.error('erro ao enviar:', e);
+    }
+}
+
+
+export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno, exibirAlunoPorId, adicionarObs, removerObs, atualizarObs, atualizarNota, enviarEmailAluno, recuperarAluno };
