@@ -42,6 +42,7 @@ public class EmailAluno extends HttpServlet {
             codigosPorEmail.put(email, codigo);
 
             Email.enviarCodigoPorEmail(email, codigo);
+            System.out.println("testes");
 
             resposta.append("sucesso", true)
                     .append("mensagem", "Código enviado com sucesso");

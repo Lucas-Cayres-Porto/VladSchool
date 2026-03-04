@@ -577,4 +577,58 @@ async function recuperarAluno(email=String, cod=String) {
 }
 
 
-export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno, exibirAlunoPorId, adicionarObs, removerObs, atualizarObs, atualizarNota, enviarEmailAluno, recuperarAluno };
+
+async function exibirAlunoPorEmail(email=String) {
+    try {
+        //constante do tipo de busca
+        const tipo = "email";
+        //cria a url com os parametros, e usa fetch para fazer a requisição get
+        const resposta = await fetch(`${url}app/aluno/exibir?tipo=${tipo}&email=${(email)}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        //verifica se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        //converte a resposta para json
+        const dadosResposta = await resposta.json();
+        //separa da resposta de sucesso para resposta de aluno
+        const alunosArray = dadosResposta.alunos;
+        if(alunosArray !== undefined && alunosArray.length > 0){
+
+
+        
+            // lista para armazenar objetos aluno
+            const listaAlunos = [];
+            //pega o lenght da respsota
+            const length = alunosArray.length;
+            //for de respostas
+            for (let i = 0; i < length; i++) {
+
+                //converte cada json da resposta para um objeto aluno usando o metodo deJson da classe Aluno, e adiciona na lista de alunos
+                const alunoJson = alunosArray[i];
+                //converte para objeto
+                const alunoObj = Aluno.deJson(alunoJson);
+                //coloca na lista
+                listaAlunos.push(alunoObj);
+
+            }
+            //retorna lista de retorna
+            return listaAlunos;
+
+        }
+        else{
+            return null;
+        }
+    } catch (e) {
+        console.error('Erro ao buscar aluno por nome:', e);
+    }
+
+}
+
+
+export { criarAluno, exibirAlunoPorIndex, exibirAlunoPorNome, exibirAlunoPorSerie, exibirAlunoPorStatus, deletarAluno, atualizarAluno, logarAluno, exibirAlunoPorId, adicionarObs, removerObs, atualizarObs, atualizarNota, enviarEmailAluno, recuperarAluno, exibirAlunoPorEmail };

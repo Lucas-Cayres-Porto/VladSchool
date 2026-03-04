@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.net.http.HttpClient;
 import java.util.List;
 
-@WebServlet("/app/adm/exibir")
+    @WebServlet("/app/adm/exibir")
 public class ExibirAdm extends HttpServlet {
     AdmDAO admDAO = new AdmDAO();
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

@@ -97,5 +97,14 @@ public class ExibirProfessor extends HttpServlet {
             out.println(professores.toJson());
 
         }
+        else if (tipo.equals("email")) {
+
+            String email = req.getParameter("email");
+
+            listaProfessor = professorDAO.buscarPorEmail(email);
+            System.out.println(listaProfessor);
+            professores.put("professores", listaProfessor);
+            out.println(professores.toJson());
+        }
     }
 }

@@ -234,5 +234,27 @@ public class ProfessorDAO {
     }
 
 
+    public List<Document> buscarPorEmail(String email){
+        Document filtro = new Document();
+        List<Document> professores = new ArrayList<>();
+        filtro.append("tipo", "professor");
+        filtro.append("email", email);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
+            //insere no json
+            while (cursor.hasNext()) {
+                professores.add(cursor.next());
+            }
+        }catch (Exception e){
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+        }
+        finally {
+            cursor.close();
+            return professores;
+        }
+    }
+
+
 }
 

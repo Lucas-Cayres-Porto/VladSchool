@@ -55,4 +55,4 @@ const alunoTeste = new Aluno(
 //console.log(await atualizarObs(obs1, "698b4b29e6fef51313788875", obsNova));
 
 
-console.log(await exibirAlunoPorNome("lucas"));
+console.log(await ex("lucas"));

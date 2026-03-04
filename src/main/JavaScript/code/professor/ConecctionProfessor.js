@@ -463,6 +463,56 @@ async function recuperarProfessor(email=String, cod=String) {
 }
 
 
+async function exibirProfessorPorEmail(email=String) {
+    try {
+        //constante do tipo de busca
+        const tipo = "email";
+        //cria a url com os parametros, e usa fetch para fazer a requisição get
+        const resposta = await fetch(`${url}app/professor/exibir?tipo=${tipo}&email=${(email)}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        //verifica se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        //converte a resposta para json
+        const dadosResposta = await resposta.json();
+        //separa da resposta de sucesso para resposta de professor
+        const professoresArray = dadosResposta.professores;
+
+        if(professoresArray !== undefined && professoresArray.length > 0){
+
+            // lista para armazenar objetos professor
+            const listaProfessores = [];
+            //pega o lenght da respsota
+            const length = professoresArray.length;
+            //for de respostas
+            for (let i = 0; i < length; i++) {
+
+                //converte cada json da resposta para um objeto professor usando o metodo deJson da classe professor, e adiciona na lista de professors
+                const professorJson = professoresArray[i];
+                //converte para objeto
+                const professorObj = Professor.deJson(professorJson);
+                //coloca na lista
+                listaProfessores.push(professorObj);
+
+            }
+            //retorna lista de retorna
+            return listaProfessores;
+
+        }
+        else{
+            return null;
+        }
+    } catch (e) {
+        console.error('Erro ao buscar professor por nome:', e);
+    }
+
+}
 
 
 
@@ -475,4 +525,5 @@ async function recuperarProfessor(email=String, cod=String) {
 
 
 
-export {criarProfessor, exibirProfessorPorNome, exibirProfessorPorDisciplina, exibirProfessorPorId, exibirProfessorPorIdProfessor, exibirProfessorTodos, deletarProfessor, atualizarProfessor, logarProfessor, enviarEmailProfessor, recuperarProfessor};
+
+export {criarProfessor, exibirProfessorPorNome, exibirProfessorPorDisciplina, exibirProfessorPorId, exibirProfessorPorIdProfessor, exibirProfessorTodos, deletarProfessor, atualizarProfessor, logarProfessor, enviarEmailProfessor, recuperarProfessor, exibirProfessorPorEmail};

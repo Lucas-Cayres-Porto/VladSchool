@@ -64,9 +64,10 @@ async function exibirAdmPorEmail(email=String) {
         const dadosResposta = await resposta.json();
         //separa da resposta de sucesso para resposta de adm
         const admsArray = dadosResposta.adms;
+        
+        if(admsArray !== undefined && admsArray.length > 0){
 
 
-        if (Array.isArray(admsArray)) {
             // lista para armazenar objetos adm
             const listaAdms = [];
             //pega o lenght da respsota
@@ -85,6 +86,9 @@ async function exibirAdmPorEmail(email=String) {
             //retorna lista de retorna
             return listaAdms;
 
+        }
+        else{
+            return null;
         }
     } catch (e) {
         console.error('Erro ao buscar adm por nome:', e);
