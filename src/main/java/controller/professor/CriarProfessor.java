@@ -1,11 +1,11 @@
-package controller.aluno;
+package controller.professor;
 
-import dao.AlunosDAO;
+import dao.ProfessorDAO;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Aluno;
+import model.Professor;
 import org.bson.Document;
 import util.ExceptionHandler;
 
@@ -13,11 +13,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-@WebServlet("/app/aluno/criar")
-
-public class CriarAluno extends HttpServlet {
-    AlunosDAO alunosDAO = new AlunosDAO();
+@WebServlet("/app/professor/criar")
+public class CriarProfessor extends HttpServlet {
+    ProfessorDAO professorDAO = new ProfessorDAO();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
@@ -56,23 +54,20 @@ public class CriarAluno extends HttpServlet {
             String jsonString = jsonBuilder.toString();
 
 
-            //objeto que o metodo criar utiliza
+            //convert json string para json bson, e depois para um objeto Professor
+            Professor professor = Professor.deJson(Document.parse(jsonString));
 
 
-            //convert json string para json bson, e depois para um objeto aluno
-            Aluno aluno = Aluno.deJson(Document.parse(jsonString));
-
-
-            //cria o aluno
-            alunosDAO.criarAluno(aluno);
+            //cria o professor
+            professorDAO.criarProfessor(professor);
 
 
             //cria e manda mensagem de sucesso
             StringBuilder message = new StringBuilder();
             message.append("{");
             message.append("\"success\": true,");
-            message.append("\"message\": \"Aluno Criado\",");
-            message.append("\"causa\": \"").append(aluno.getNome()).append("\"");
+            message.append("\"message\": \"Professor Criado\",");
+            message.append("\"causa\": \"").append(professor.getNome()).append("\"");
             message.append("}");
             out.println(message.toString());
 
