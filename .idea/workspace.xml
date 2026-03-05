@@ -10,75 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/adm/Adm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/adm/ConnectionAdm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/adm/teste.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/ConecctionAluno.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/NotasMostrar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/stud.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/disciplina/Disciplina.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/disciplina/Disciplinas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/disciplina/testeDs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/dashboard/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/dashboard/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/dashboard/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/dashboard/renderAluno.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/ConecctionProfessor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/Professor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/Usuario.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/teste.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/teste2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/EmailAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/ExibirAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/LogarAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/RecuperarAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/EmailAluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/LogarAluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/RecuperarAluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/AtualizarDisciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/CriarDisciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/DeletarDisciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/disciplina/ExibirDisciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/AtualizarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/CriarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/DeletarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/EmailProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/EnviarObservacaoProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/ExibirProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/LogarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/professor/RecuperarProfessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AdmDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ProfessorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/filters/CorsFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Aluno.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/Aluno.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Conecction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/disciplina/ConnectionDisciplina.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Notas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/Notas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Observacoes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/Observacoes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/Usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/Usuario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/tempCodeRunnerFile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/teste.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/teste.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/CriarAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/CriarAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DisciplinaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DisciplinaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Disciplinas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Disciplinas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testes/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testes/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Env.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Env.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrabalhoDSV2_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TrabalhoDSV2_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +55,14 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -139,7 +81,7 @@
     "Smart Tomcat.SmartAPI.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lucasporto-ieg/OneDrive - Instituto J&F/Área de Trabalho/Matérias TECH/Desenvolvimento/VladSchool/src/main/resources",
+    "last_opened_file_path": "C:/Users/lucasporto-ieg/.SmartTomcat/VladSchool/conf",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -252,9 +194,12 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\nicolasoliveira-ieg\.SmartTomcat\TrabalhoDSV2\TrabalhoDSV2" />
+      <option name="catalinaBase" value="C:\Users\lucasporto-ieg\.SmartTomcat\VladSchool\conf\Catalina\conf" />
       <option name="contextPath" value="/TrabalhoDSV2" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
