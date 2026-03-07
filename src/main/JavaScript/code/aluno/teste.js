@@ -30,7 +30,7 @@ const alunoTeste = new Aluno(
     "Lucas.Lima",                // nomeUsuario (2)
     "senha123",                  // senha (3)
     "aluno",                     // tipo (4)
-    "Lucas@escola.com",           // email (5)
+    "nicolas25vlad@gmail.com",   // email (5)
     null,                        // id (6) - null para novo aluno
     "20240001",                  // matricula (7)
     "9º ano",                    // serie (8)
@@ -55,4 +55,4 @@ const alunoTeste = new Aluno(
 //console.log(await atualizarObs(obs1, "698b4b29e6fef51313788875", obsNova));
 
 
-console.log(await ex("lucas"));
+console.log(await criarAluno(alunoTeste));

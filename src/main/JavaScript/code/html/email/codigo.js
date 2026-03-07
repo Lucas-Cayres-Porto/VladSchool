@@ -13,13 +13,17 @@ async function recuperarSenha() {
     const tipo = sessionStorage.getItem('tipoUsuario');
     const codigo = sessionStorage.getItem('codigoVerificacao');
     
+    let resultado;
+    
     if (tipo === "aluno") {
-        await recuperarAluno(email, codigo);
+        resultado = await recuperarAluno(email, codigo);
     } else if (tipo === "professor") {
-        await recuperarProfessor(email, codigo);
+        resultado = await recuperarProfessor(email, codigo);
     } else if (tipo === "adm") {
-        await recuperarAdm(email, codigo);
+        resultado = await recuperarAdm(email, codigo);
     }
+    
+    return resultado.retorno; // retorna o true ou false    
 }
 
 window.verificar = async function(event) {
@@ -29,26 +33,20 @@ window.verificar = async function(event) {
         .map(input => input.value)
         .join('');
     
-    console.log('codigo:', codigo);
-    
     if (codigo.length === 6) {
-        const emailAtual = sessionStorage.getItem('emailRecuperacao');
-        const tipoAtual = sessionStorage.getItem('tipoUsuario');
-        
-        console.log('código inserido:', codigo);
-        console.log('email:', emailAtual);
-        console.log('tipo:', tipoAtual);
-        
         sessionStorage.setItem('codigoVerificacao', codigo);
         
-
-        console.log('deu certo?', await recuperarSenha());
+        const sucesso = await recuperarSenha();
         
-        return codigo;
+        console.log(sucesso)
+        if (sucesso) {
+            alert('código correto redirecionando...')
+            window.location.href = './novaSenha.html'; // redireciona
+        } else {
+            alert('Código inválido ou expirado');
+        }
     } else {
-        console.log('erro: codigo incompleto');
         alert('Preencha todos os 6 dígitos');
-        return null;
     }
 }
 
@@ -60,3 +58,24 @@ function limparDadosRecuperacao() {
     sessionStorage.removeItem('tipoUsuario');
     sessionStorage.removeItem('codigoVerificacao');
 }
+
+
+// isso funciona no input de código
+document.querySelectorAll('.code-input').forEach((input, index, inputs) => {
+    input.addEventListener('input', (e) => {
+        // regex basico para permitir só numero
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        
+        // Avança pro proximo quando digitar
+        if (e.target.value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+        }
+    });
+    
+    input.addEventListener('keydown', (e) => {
+        // Volta pro anterior quando deletado
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+            inputs[index - 1].focus();
+        }
+    });
+});

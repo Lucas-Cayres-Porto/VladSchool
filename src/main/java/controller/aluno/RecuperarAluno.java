@@ -35,15 +35,24 @@ public class RecuperarAluno extends HttpServlet {
             String email = dados.getString("email");
             String codigoRecebido = dados.getString("codigo");
 
-            String codigoArmazenado = EmailAluno.codigosPorEmail.get(email);
+            Object[] dadosCodigo = EmailAluno.codigosPorEmail.get(email);
 
-            if (codigoArmazenado != null && codigoArmazenado.equals(codigoRecebido)) {
-                EmailAluno.codigosPorEmail.remove(email);
-                resposta.append("retorno", true)
-                        .append("mensagem", "Código válido");
+            if (dadosCodigo != null) {
+                String codigoArmazenado = (String) dadosCodigo[0];
+                long timestamp = (long) dadosCodigo[1];
+                long agora = System.currentTimeMillis();
+
+                if ((agora - timestamp) <= 300000 && codigoArmazenado.equals(codigoRecebido)) {
+                    EmailAluno.codigosPorEmail.remove(email);
+                    resposta.append("retorno", true)
+                            .append("mensagem", "Código válido");
+                } else {
+                    resposta.append("retorno", false)
+                            .append("erro", "Código inválido ou expirado");
+                }
             } else {
                 resposta.append("retorno", false)
-                        .append("erro", "Código inválido");
+                        .append("erro", "Código inválido ou expirado");
             }
 
         } catch (Exception e) {

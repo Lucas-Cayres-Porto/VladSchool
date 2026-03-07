@@ -16,7 +16,7 @@ import java.util.Map;
 @WebServlet("/app/aluno/email")
 public class EmailAluno extends HttpServlet {
 
-    protected static Map<String, String> codigosPorEmail = new HashMap<>();
+    protected static Map<String, Object[]> codigosPorEmail = new HashMap<>();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
@@ -39,10 +39,9 @@ public class EmailAluno extends HttpServlet {
             String email = Document.parse(jsonString).getString("email");
 
             String codigo = Email.gerarCodigoSeisDigitos();
-            codigosPorEmail.put(email, codigo);
+            codigosPorEmail.put(email, new Object[]{codigo, System.currentTimeMillis()});
 
             Email.enviarCodigoPorEmail(email, codigo);
-            System.out.println("testes");
 
             resposta.append("sucesso", true)
                     .append("mensagem", "Código enviado com sucesso");

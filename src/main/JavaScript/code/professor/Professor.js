@@ -15,6 +15,9 @@ class Professor extends Usuario {
         return this.disciplinasLecionadas;
     }
 
+    setSenha(senha) {this.senha = senha;}
+
+
     paraJson() {
         try {
             const professorJson = {

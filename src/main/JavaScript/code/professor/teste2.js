@@ -1,4 +1,5 @@
-import { exibirAlunoPorId } from '../aluno/ConecctionAluno.js';
+import { recuperarAdm } from '../adm/ConnectionAdm.js';
+import { exibirAlunoPorEmail, exibirAlunoPorId } from '../aluno/ConecctionAluno.js';
 import { 
     criarProfessor, 
     exibirProfessorPorNome, 
@@ -13,4 +14,4 @@ import {
 import Professor from './Professor.js';
 
 
-console.log(await exibirProfessorPorIdProfessor(1));
+console.log(await recuperarAdm("aisfjpewi"));
