@@ -125,7 +125,7 @@ a.signup {
 }
 
 
-/* --- Code input feature --- */
+/* input de código */
 .code-input-container {
     display: flex;
     gap: 10px;
@@ -163,7 +163,6 @@ a.signup {
     -moz-appearance: textfield;
 }
 
-/* Ajuste para mobile */
 @media screen and (max-width: 767px) {
     .code-input {
         width: 45px;
@@ -176,7 +175,6 @@ a.signup {
     }
 }
 
-/* Ajuste para desktop (mantendo a consistência com seu design) */
 @media screen and (min-width: 768px) {
     .code-input {
         width: 70px;

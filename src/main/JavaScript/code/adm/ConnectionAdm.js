@@ -97,6 +97,44 @@ async function exibirAdmPorEmail(email=String) {
 }
 
 
+
+async function atualizarAdm(id=String, adm=Adm) {
+    try {
+        adm = adm.paraJson();
+
+        //metodo que que envia e conecta no backend para atualizar um adm
+        const resposta = await fetch(`${url}app/adm/atualizar?_id=${id}`, {
+            method: 'POST',
+            headers: {
+                //seta o tipo de conteudo para json, para o backend entender que é um json
+                'Content-Type': 'application/json',
+            },
+            //transforma para string o json adm
+            body: JSON.stringify(adm)
+        });
+
+        // Verificar se a resposta foi ok
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        // Converter resposta para json
+        const dadosResposta = await resposta.json();
+        console.log('sucesso:', dadosResposta);
+
+
+        //retorna os dados da resposta para o frontend
+        return dadosResposta;
+
+        //try e catch, igual o java
+    } catch (e) {
+        //mensagem de erro, como no front é menos comum n tem um tratamento completo
+        console.error('erro ao enviar:', e);
+    }
+
+}
+
+
 async function enviarEmailAdm(email=String) {
     try {
 

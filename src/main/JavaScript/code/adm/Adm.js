@@ -15,6 +15,9 @@ class Adm {
     getEmail() { return this.email; }
     getId() { return this.id; }
 
+    setSenha(senha) {this.senha = senha;}
+
+
     paraJson() {
         try {
             const admJson = {

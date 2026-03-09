@@ -2,8 +2,10 @@ package dao;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Filters;
 import conexao.Conectar;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import util.ExceptionHandler;
 
 import java.util.ArrayList;
@@ -49,6 +51,27 @@ public class AdmDAO {
         finally {
             cursor.close();
             return professores;
+        }
+    }
+
+    public int atualizarAdm(String id, Document json) {
+        try {
+            ObjectId objectId = new ObjectId(id);
+
+            if (json.containsKey("_id")) {
+                json.remove("_id");
+            }
+            long alterados = colecao.replaceOne(
+                    Filters.eq("_id", objectId), json
+            ).getModifiedCount();
+            if (alterados > 0) {
+                return 1;
+            }
+            return 0;
+        } catch (Exception e) {
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+            return -1;
         }
     }
 }

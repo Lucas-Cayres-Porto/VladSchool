@@ -29,6 +29,8 @@ class Aluno extends Usuario {
 
     setObservacoes(observacoes) {this.observacoes = observacoes;}
 
+    setSenha(senha) {this.senha = senha;}
+
 
     paraJson(){
         try{
