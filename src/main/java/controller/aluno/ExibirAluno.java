@@ -43,6 +43,19 @@ public class ExibirAluno extends HttpServlet {
         //compara as buscas
         if (tipo==null){
             out.println(modelo.toJson());
+        } else if (tipo.equals("id")) {
+
+
+            //busca por id
+            String id = req.getParameter("id");
+
+            //pesquisa no banco
+            listaAlunos = alunosDAO.buscarPorId(id);
+
+            //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
+            alunos.put("alunos", listaAlunos);
+            out.println(alunos.toJson());
+
         } else if (tipo.equals("index")) {
 
             //indice das paginas da busca (10 em 10 resultados)
@@ -54,7 +67,6 @@ public class ExibirAluno extends HttpServlet {
             //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
             alunos.put("alunos", listaAlunos);
             out.println(alunos.toJson());
-            System.out.println(alunos);
         } else if (tipo.equals("nome")) {
 
             //pega na requisição o nome do aluno
@@ -87,6 +99,22 @@ public class ExibirAluno extends HttpServlet {
             listaAlunos = alunosDAO.buscarPorStatus(status);
 
             //coloca tuda a lista de alunos( que é na verdade uma lista de jsons) em uma array no json
+            alunos.put("alunos", listaAlunos);
+            out.println(alunos.toJson());
+        } else if (tipo.equals("email")) {
+
+            String email = req.getParameter("email");
+
+            listaAlunos = alunosDAO.buscarPorEmail(email);
+
+            alunos.put("alunos", listaAlunos);
+            out.println(alunos.toJson());
+        } else if (tipo.equals("matricula")) {
+
+            String matricula = req.getParameter("matricula");
+
+            listaAlunos = alunosDAO.buscarPorMatricula(matricula);
+
             alunos.put("alunos", listaAlunos);
             out.println(alunos.toJson());
         }
