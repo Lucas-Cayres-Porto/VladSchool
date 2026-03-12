@@ -64,7 +64,28 @@ public class AlunosDAO {
             return -1;
         }
     }
+    public List<Document> buscarPorMatricula(String matricula){
+        List<Document> alunos = new ArrayList<>();
+        Document filtro = new Document();
+        filtro.append("tipo", "aluno");      // Filtra pelo tipo
+        filtro.append("dados_aluno.matricula",matricula);
+        MongoCursor<Document> cursor = colecao.find(filtro).iterator();
+        try {
 
+
+            //insere no json
+            while (cursor.hasNext()) {
+                alunos.add(cursor.next());
+            }
+        }catch (Exception e){
+            ExceptionHandler eh = new ExceptionHandler(e);
+            eh.printExeption();
+        }
+        finally {
+            cursor.close();
+            return alunos;
+        }
+    }
     public int atualizarAluno(String id, Document json) {
         try {
             ObjectId objectId = new ObjectId(id);

@@ -10,29 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a349b906-d9f8-4683-826d-78209131c6a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adm/AtualizarAdm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Adm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/adm/Adm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/adm/Adm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/adm/ConnectionAdm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/adm/ConnectionAdm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/adm/teste.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/adm/teste.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/Aluno.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/Aluno.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/NotasMostrar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/NotasMostrar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/teste.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/aluno/teste.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/codigo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/html/email/enviarEmail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/professor/Professor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/Professor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/JavaScript/code/professor/teste2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/JavaScript/code/professor/teste2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adm/EmailAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/adm/EmailAdm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adm/RecuperarAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/adm/RecuperarAdm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/EmailAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/EmailAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/RecuperarAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/RecuperarAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/professor/EmailProfessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/professor/EmailProfessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/professor/RecuperarProfessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/professor/RecuperarProfessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AdmDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AdmDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adm/ExibirAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/adm/ExibirAdm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/aluno/ExibirAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AlunosDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,9 +198,6 @@
       <option name="catalinaBase" value="C:\Users\lucasporto-ieg\.SmartTomcat\VladSchool\TrabalhoDSV2" />
       <option name="contextPath" value="/TrabalhoDSV2" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -243,9 +221,6 @@
       <option name="catalinaBase" value="C:\apache-tomcat-11.0.11" />
       <option name="contextPath" value="/TrabalhoDSV2" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -300,6 +275,8 @@
       <workItem from="1772448851212" duration="4527000" />
       <workItem from="1772663302290" duration="303000" />
       <workItem from="1772918520765" duration="6050000" />
+      <workItem from="1773100158069" duration="11000" />
+      <workItem from="1773309985494" duration="636000" />
     </task>
     <servers />
   </component>

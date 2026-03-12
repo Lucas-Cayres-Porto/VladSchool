@@ -109,6 +109,14 @@ public class ExibirAluno extends HttpServlet {
 
             alunos.put("alunos", listaAlunos);
             out.println(alunos.toJson());
+        } else if (tipo.equals("matricula")) {
+
+            String matricula = req.getParameter("matricula");
+
+            listaAlunos = alunosDAO.buscarPorMatricula(matricula);
+
+            alunos.put("alunos", listaAlunos);
+            out.println(alunos.toJson());
         }
     }
 
